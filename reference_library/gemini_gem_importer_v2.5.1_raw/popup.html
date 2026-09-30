@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gem 批量导入</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true"><span>G</span></div>
+        <div class="header-copy">
+          <p class="eyebrow">GEM STUDIO <span>·</span> LOCAL QUEUE</p>
+          <h1>Gem 批量导入</h1>
+          <p class="header-subtitle">TXT Skill <span aria-hidden="true">→</span> Gemini Gem</p>
+        </div>
+        <div class="status-chip" title="待命">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="status-label">待命</span>
+        </div>
+      </header>
+
+      <section class="panel" id="selectionPanel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">01 / QUEUE</p>
+            <h2>待导入文件</h2>
+            <p id="selectionSummary">尚未选择 TXT</p>
+          </div>
+          <button class="button button-quiet" id="clearButton" type="button" hidden>清空队列</button>
+        </div>
+
+        <div class="pick-actions">
+          <button class="button button-secondary" id="pickFilesButton" type="button"><span class="button-glyph">TXT</span>选择文件</button>
+          <button class="button button-secondary" id="pickFolderButton" type="button"><span class="button-glyph">DIR</span>选择文件夹</button>
+        </div>
+        <input id="fileInput" type="file" accept=".txt,text/plain" multiple hidden />
+        <input id="folderInput" type="file" accept=".txt,text/plain" multiple webkitdirectory hidden />
+
+        <div class="empty-state" id="emptyState">
+          <span class="empty-mark" aria-hidden="true">TXT</span>
+          <strong>按文件名顺序依次创建</strong>
+          <span>例如：01. 脚本优化.txt <b aria-hidden="true">→</b> 脚本优化</span>
+        </div>
+        <ol class="file-list" id="fileList" aria-live="polite"></ol>
+      </section>
+
+      <section class="panel options-panel">
+        <div class="section-kicker">02 / BEHAVIOR</div>
+        <label class="switch-row">
+          <span>
+            <strong>跳过同名 Gem</strong>
+            <small>避免重复创建已存在的名称</small>
+          </span>
+          <input id="skipExisting" type="checkbox" checked />
+        </label>
+        <label class="field-row">
+          <span>每项间隔</span>
+          <select id="itemDelay">
+            <option value="1000">1 秒</option>
+            <option value="2000" selected>2 秒</option>
+            <option value="4000">4 秒</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="panel progress-panel" id="progressPanel" hidden>
+        <div class="section-kicker">03 / ACTIVITY</div>
+        <div class="progress-heading">
+          <strong id="progressTitle">准备中</strong>
+          <span id="progressCount">0 / 0</span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+        <p class="current-item" id="currentItem">正在连接 Gemini…</p>
+        <p class="error-message" id="errorMessage" hidden></p>
+        <div class="log-box" id="logBox"></div>
+      </section>
+
+      <footer class="footer-actions">
+        <button class="button button-primary" id="startButton" type="button" disabled>开始导入</button>
+        <button class="button button-secondary" id="pauseButton" type="button" hidden>暂停</button>
+        <button class="button button-danger" id="cancelButton" type="button" hidden>取消</button>
+      </footer>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,776 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, "Segoe UI Variable", "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  --page: #090b0f;
+  --surface: #10141a;
+  --surface-raised: #151a22;
+  --surface-hover: #1a2029;
+  --text: #f3f6f8;
+  --text-soft: #c8d0d7;
+  --text-muted: #7f8995;
+  --border: #262d37;
+  --border-strong: #343d49;
+  --divider: #202630;
+  --primary: #8bd7c4;
+  --primary-strong: #b7eadf;
+  --primary-ink: #07110f;
+  --amber: #e7b86e;
+  --blue: #90a8ff;
+  --danger: #ff938e;
+  --danger-border: #633b3e;
+  --shadow: 0 18px 48px rgb(0 0 0 / 36%);
+  background: var(--page);
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  width: 408px;
+  min-height: 590px;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgb(144 168 255 / 7%) 0, transparent 180px),
+    var(--page);
+}
+
+body::before {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--blue), var(--primary), transparent);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+button,
+select {
+  letter-spacing: 0;
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(139 215 196 / 72%);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  position: relative;
+  padding: 18px;
+  animation: app-enter 420ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.brand-mark {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #9eb1ff 0 36%, #79d2bb 36% 68%, #e8b96e 68%);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 28%);
+  color: #0b1015;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.brand-mark::after {
+  position: absolute;
+  inset: 1px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 6px;
+  content: "";
+}
+
+.brand-mark span {
+  position: relative;
+  z-index: 1;
+}
+
+.header-copy {
+  min-width: 0;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 2px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 720;
+  line-height: 1.18;
+}
+
+h2 {
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 680;
+  line-height: 1.2;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  color: var(--primary);
+}
+
+.header-subtitle,
+.panel-heading p {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.header-subtitle span {
+  margin: 0 3px;
+  color: var(--primary);
+}
+
+.status-chip {
+  min-width: 52px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 3%);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #6f7985;
+  box-shadow: 0 0 0 3px rgb(111 121 133 / 10%);
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.status-dot.running {
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgb(144 168 255 / 12%), 0 0 12px rgb(144 168 255 / 32%);
+  animation: status-pulse 1.6s ease-in-out infinite;
+}
+
+.status-dot.done {
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgb(139 215 196 / 12%);
+}
+
+.status-dot.error {
+  background: var(--danger);
+  box-shadow: 0 0 0 4px rgb(255 147 142 / 12%);
+}
+
+.status-chip:has(.status-dot.running) {
+  border-color: rgb(144 168 255 / 28%);
+  background: rgb(144 168 255 / 7%);
+  color: #b5c2ff;
+}
+
+.status-chip:has(.status-dot.done) {
+  border-color: rgb(139 215 196 / 28%);
+  background: rgb(139 215 196 / 7%);
+  color: var(--primary);
+}
+
+.status-chip:has(.status-dot.error) {
+  border-color: rgb(255 147 142 / 30%);
+  background: rgb(255 147 142 / 7%);
+  color: var(--danger);
+}
+
+.status-chip:has(.status-dot.running) .status-label,
+.status-chip:has(.status-dot.done) .status-label,
+.status-chip:has(.status-dot.error) .status-label {
+  font-size: 0;
+}
+
+.status-chip:has(.status-dot.running) .status-label::after,
+.status-chip:has(.status-dot.done) .status-label::after,
+.status-chip:has(.status-dot.error) .status-label::after {
+  font-size: 10px;
+}
+
+.status-chip:has(.status-dot.running) .status-label::after {
+  content: "运行中";
+}
+
+.status-chip:has(.status-dot.done) .status-label::after {
+  content: "完成";
+}
+
+.status-chip:has(.status-dot.error) .status-label::after {
+  content: "异常";
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 2.5%), transparent 80px), var(--surface);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 3%) inset;
+  animation: panel-enter 420ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.panel:nth-of-type(1) {
+  animation-delay: 50ms;
+}
+
+.panel:nth-of-type(2) {
+  animation-delay: 95ms;
+}
+
+.panel:nth-of-type(3) {
+  animation-delay: 140ms;
+}
+
+.panel-heading,
+.progress-heading,
+.switch-row,
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.button {
+  position: relative;
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 0 13px;
+  cursor: pointer;
+  color: var(--text);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.button-primary {
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-strong), var(--primary));
+  color: var(--primary-ink);
+  box-shadow: 0 8px 22px rgb(139 215 196 / 14%);
+  font-weight: 760;
+}
+
+.button-primary::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 28%) 48%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 480ms ease;
+}
+
+.button-primary:hover:not(:disabled) {
+  box-shadow: 0 11px 28px rgb(139 215 196 / 20%);
+}
+
+.button-primary:hover:not(:disabled)::after {
+  transform: translateX(120%);
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-color: var(--border-strong);
+  background: var(--surface-raised);
+  color: var(--text-soft);
+}
+
+.button-secondary:hover:not(:disabled) {
+  border-color: #46515f;
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.button-glyph {
+  min-width: 26px;
+  padding: 3px 4px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--primary);
+  font: 700 8px/1 "Cascadia Mono", Consolas, monospace;
+  text-align: center;
+}
+
+.button-danger {
+  border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+.button-danger:hover:not(:disabled) {
+  background: rgb(255 147 142 / 8%);
+  border-color: #815053;
+}
+
+.button-quiet {
+  min-height: 28px;
+  padding: 0 8px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.button-quiet:hover:not(:disabled) {
+  background: var(--surface-raised);
+  color: var(--primary);
+}
+
+.empty-state {
+  min-height: 112px;
+  margin-top: 12px;
+  border: 1px dashed #323b47;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 1.5%);
+  color: var(--text-soft);
+  text-align: center;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.empty-state:hover {
+  border-color: #46515e;
+  background: rgb(255 255 255 / 2.5%);
+}
+
+.empty-mark {
+  min-width: 38px;
+  margin-bottom: 11px;
+  padding: 6px 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  background: var(--surface-raised);
+  color: var(--primary);
+  font: 750 9px/1 "Cascadia Mono", Consolas, monospace;
+  box-shadow: var(--shadow);
+}
+
+.empty-state strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.empty-state > span:last-child {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.empty-state b {
+  margin: 0 3px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.file-list {
+  max-height: 188px;
+  overflow: auto;
+  margin: 10px -4px -3px;
+  padding: 0 4px;
+  list-style: none;
+  scrollbar-color: #39434f transparent;
+  scrollbar-width: thin;
+}
+
+.file-list::-webkit-scrollbar,
+.log-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.file-list::-webkit-scrollbar-thumb,
+.log-box::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #39434f;
+}
+
+.file-item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  gap: 9px;
+  align-items: center;
+  min-height: 46px;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--divider);
+  border-radius: 6px;
+  animation: item-enter 240ms ease both;
+  transition: background 150ms ease;
+}
+
+.file-item:hover {
+  background: var(--surface-raised);
+}
+
+.file-item:last-child {
+  border-bottom-color: transparent;
+}
+
+.file-index {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--primary);
+  font: 700 9px/1 "Cascadia Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.file-name {
+  min-width: 0;
+}
+
+.file-name strong,
+.file-name small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-name strong {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.file-name small,
+.file-size {
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+.file-name small {
+  margin-top: 3px;
+}
+
+.file-size {
+  font-variant-numeric: tabular-nums;
+}
+
+.file-overflow {
+  padding: 11px 0 5px;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+.options-panel {
+  padding-block: 14px 12px;
+}
+
+.options-panel > .section-kicker,
+.progress-panel > .section-kicker {
+  margin-bottom: 12px;
+}
+
+.switch-row {
+  cursor: pointer;
+}
+
+.switch-row strong,
+.field-row > span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.switch-row small {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.switch-row input {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin: 0;
+  appearance: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: #171c23;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.switch-row input::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #77818c;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 35%);
+  content: "";
+  transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), background 180ms ease;
+}
+
+.switch-row input:checked {
+  border-color: rgb(139 215 196 / 54%);
+  background: rgb(139 215 196 / 18%);
+}
+
+.switch-row input:checked::after {
+  background: var(--primary);
+  transform: translateX(16px);
+}
+
+.field-row {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--divider);
+}
+
+select {
+  min-width: 76px;
+  min-height: 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 5px 9px;
+  background: var(--surface-raised);
+  color: var(--text-soft);
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+select:hover:not(:disabled) {
+  border-color: #46515f;
+  background: var(--surface-hover);
+}
+
+.progress-panel {
+  padding-bottom: 12px;
+}
+
+.progress-heading {
+  font-size: 12px;
+}
+
+.progress-heading strong {
+  color: var(--text-soft);
+}
+
+.progress-heading span {
+  color: var(--primary);
+  font: 700 10px/1 "Cascadia Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+  height: 6px;
+  margin: 12px 0 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #0b0e12;
+}
+
+.progress-track span {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--blue), var(--primary));
+  transition: width 320ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.progress-track span::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 32%), transparent);
+  transform: translateX(-100%);
+  animation: progress-sheen 1.6s linear infinite;
+}
+
+.current-item {
+  overflow: hidden;
+  color: var(--text-soft);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-message {
+  margin-top: 9px;
+  padding: 8px 9px;
+  border: 1px solid var(--danger-border);
+  border-radius: 6px;
+  background: rgb(255 147 142 / 6%);
+  color: var(--danger);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.log-box {
+  max-height: 82px;
+  overflow: auto;
+  margin-top: 9px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  font: 9px/1.65 "Cascadia Mono", Consolas, monospace;
+}
+
+.log-line {
+  display: block;
+}
+
+.footer-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  margin: 0 -2px -2px;
+  padding: 8px 2px 2px;
+  background: linear-gradient(180deg, transparent, var(--page) 18px);
+}
+
+.footer-actions .button-primary {
+  width: 100%;
+}
+
+@keyframes app-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes item-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes progress-sheen {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

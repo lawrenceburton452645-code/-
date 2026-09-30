@@ -1,0 +1,682 @@
+{
+  "library_name": "CHALOVELO product reference library",
+  "updated_at": "2026-09-23",
+  "usage": "Reusable product data for AI video prompt writing. User-provided TikTok Shop product links are the source of truth for product style, material, included pieces, colors, sizes, care and title. Local images are supporting references for SKU recognition and visual inspiration only; when link data conflicts with local images, use the TikTok Shop link data.",
+  "reference_priority": {
+    "product_style_source": "User-provided TikTok Shop product links",
+    "product_material_source": "User-provided TikTok Shop product links",
+    "pieces_colors_sizes_care_source": "User-provided TikTok Shop product links",
+    "local_product_images_role": "Supporting references for SKU recognition, texture clues and visual composition only",
+    "on_body_images_role": "Reference only for fit impression, body type, skin tone, body proportions and styling mood",
+    "conflict_rule": "If product link data conflicts with local product images or on-body images, use the product link unless the user explicitly requests a local-image variant."
+  },
+  "listing_section_policy": {
+    "sections": ["highlights", "detail_fields", "product_description", "introduction"],
+    "evidence_order": ["page-visible structured field", "page-visible non-AI copy", "page-visible AI-generated copy", "listing title", "listing image", "local image"],
+    "unknown_rule": "If a section or field cannot be read, keep it null/unknown and record the access status. Never reconstruct it from another SKU.",
+    "current_access_note": "All six registered product pages were opened and read in the user's browser on 2026-09-23. Page-visible structured fields are authoritative; Highlights and Introduction sections labeled by TikTok as AI generated are stored separately and used only when compatible with structured fields and visible listing assets."
+  },
+  "link_inventory": {
+    "registered_skus": ["033", "063", "045", "015", "056", "032"],
+    "missing_link_skus": []
+  },
+  "shop": {
+    "name": "CHALOVELO",
+    "url": "https://shop.tiktok.com/us/store/chalovelo/7494165899525326509",
+    "followers_observed": "2.5K+",
+    "sold_observed": "9509",
+    "video_count_observed": "33",
+    "shop_rating_observed": "4.6",
+    "positive_review_rate_observed": "86%",
+    "on_time_delivery_rate_observed": "99%",
+    "chat_satisfaction_observed": "87%"
+  },
+  "products": [
+    {
+      "sku": "033",
+      "match_status": "confirmed_by_user",
+      "local_assets": [
+        "E:\\下载\\图片素材\\@033-产品图.png",
+        "E:\\下载\\图片素材\\033-产品背图.jpg",
+        "E:\\下载\\图片素材\\033正面图.png",
+        "E:\\下载\\图片素材\\033上身_1.png",
+        "E:\\下载\\图片素材\\033上身1.png",
+        "E:\\下载\\图片素材\\i0331.png",
+        "E:\\下载\\图片素材\\把@@033-产品图 的产品改色为@80 (1)-record-3838694-0.png",
+        "E:\\下载\\图片素材\\把@033-产品背图 (1) 的产品改色为@80 (1)-record-3838720-0.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-womens-sexy-nightgown-lace-babydoll-chemise/1732460667220169389",
+        "title": "CHALOVELO Women's Elegant Sheer Lace Babydoll Chemise - Casual Basic Nightgown Sleepwear with Adjustable Straps",
+        "sold_observed": "29",
+        "price_seen_usd": "46.00",
+        "shipping_seen_usd": "6.99"
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page on 2026-09-23.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["Delicate lace material with a semi-sheer design", "Sizes S, M, L, XL and 2XL", "Adjustable straps", "Lace back design", "Positioned for spring, summer, autumn and holiday wear"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material": "Lace", "embellishment": "Lace", "sheer": "Semi-sheer", "dangerous_goods_or_hazardous_materials": "No", "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible_images_only", "content": "The section contains listing images; no independent product-description prose was exposed in the accessible page text."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "Lace semi-sheer babydoll chemise with adjustable straps, offered in black and red and positioned as sleepwear or special-night wear. Comfort and occasion language is marketing copy, not a technical performance claim."}
+      },
+      "product_type": "single lace chemise / mini nightdress",
+      "confirmed_visual_details_from_local_images": [
+        "Fitted spaghetti-strap mini chemise/nightdress.",
+        "Listing-authoritative sheer black lace body with visible floral texture; local images support shape and texture only.",
+        "Black main version plus red recolor reference.",
+        "Scalloped lace hem.",
+        "Open lace back with horizontal strap structure."
+      ],
+      "materials": [
+        "Sheer lace",
+        "Semi-transparent black floral lace"
+      ],
+      "page_detail_fields": {
+        "material": "Lace",
+        "embellishment": "Lace",
+        "design_features": [
+          "sheer black floral lace with semi-transparent appearance",
+          "adjustable straps",
+          "lace back design"
+        ]
+      },
+      "pieces_included": [
+        "1 lace chemise / babydoll nightdress"
+      ],
+      "colors": [
+        "Black",
+        "Red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["S", "M", "L", "XL", "2XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": null,
+      "video_prompt_keywords": [
+        "black fitted lace chemise",
+        "semi-transparent black floral lace body",
+        "adjustable spaghetti straps",
+        "open lace back",
+        "scalloped lace hem",
+        "soft sheer lace texture"
+      ],
+      "do_not_add": [
+        "Do not describe it as a two-piece set.",
+        "Do not add stockings, robe, choker or garter belt unless a new reference image shows them.",
+        "For red version, use only the local recolor image structure.",
+        "Do not turn the listing-confirmed sheer lace into fully opaque fabric or into extreme transparency; keep the presentation tasteful and product-focused."
+      ],
+      "prompt_product_contract": {
+        "material": "Sheer floral lace; exact fiber composition is not visible in the captured structured fields.",
+        "surface_and_light": "Readable floral lace texture with restrained light passing through the openings; no satin gloss or opaque jersey appearance.",
+        "transparency": "Semi-transparent sheer lace, tasteful and product-readable, never fully opaque and never exaggerated to near-invisible fabric.",
+        "silhouette": "Single fitted mini chemise/babydoll nightdress, not a set.",
+        "pieces_and_wearing_relationship": "One chemise worn as the complete garment; no separate panty, robe, stockings, choker, or garter belt unless the user supplies a distinct variant reference.",
+        "construction_locks": "Adjustable spaghetti straps, front lace body, open lace back with horizontal strap relationship, scalloped lace hem; preserve the same front/side/back design across every shot.",
+        "prohibited_transformations": "No two-piece conversion, mesh skirt, satin panel, extra straps, missing straps, opaque replacement fabric, changed hem, or added accessories."
+      },
+      "notes": "TikTok link confirmed by user as 033. Current user instruction restores the listing-authoritative 'Sheer Lace' description: render the lace as semi-transparent while keeping the presentation tasteful and suitable for mainstream product demonstration."
+    },
+    {
+      "sku": "063",
+      "match_status": "confirmed_by_user_link_priority",
+      "local_assets": [
+        "E:\\下载\\图片素材\\063-黑.jpg",
+        "E:\\下载\\图片素材\\063-蓝.png",
+        "E:\\下载\\图片素材\\063-香槟.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-womens-nightdresses-sleeveless-2-piece-set-soho-chic/1732627755632530093",
+        "title": "CHALOVELO Women's Nightdresses - Womenswear Homewear Sleepwear & Loungewear for Casual Relaxation Sleeveless Basic Minimalist 2-piece set,sohochic",
+        "sold_observed": "1",
+        "price_seen_usd": null,
+        "shipping_seen_usd": "6.99"
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page on 2026-09-23.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["Durable polyester", "Sizes S, M, L, XL and 2XL", "Sleeveless basic minimalist design", "Casual, holiday and relaxed occasions", "Black, champagne and navy blue"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material": "Polyester", "pattern": "Plain", "occasion": "Casual", "sleeve_length": "Sleeveless", "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible_images_only", "content": "The section contains listing images; no independent product-description prose was exposed in the accessible page text."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "A polyester, sleeveless, minimalist two-piece nightdress set for at-home relaxation, with a plain pattern and clean lines. Seasonal and high-quality language is AI-generated marketing copy."}
+      },
+      "product_type": "sleeveless basic minimalist 2-piece nightdress set",
+      "confirmed_visual_details_from_local_images": [
+        "Long satin robe plus matching spaghetti-strap nightdress.",
+        "Nightdress has lace trim at the bust.",
+        "Robe is long sleeve with lace trim at sleeve cuffs and hem.",
+        "Smooth glossy satin-like surface.",
+        "Confirmed colors from images: black, navy/deep blue, champagne."
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "page_detail_fields": {
+        "material": "Polyester",
+        "sleeve_length": "Sleeveless",
+        "design_features": [
+          "2-piece set",
+          "basic minimalist nightdress",
+          "sleepwear and loungewear"
+        ]
+      },
+      "pieces_included": [
+        "2-piece set per TikTok page",
+        "sleeveless/basic nightdress set per TikTok page"
+      ],
+      "colors": [
+        "Black",
+        "Champagne",
+        "Navy blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["S", "M", "L", "XL", "2XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": null,
+      "video_prompt_keywords": [
+        "sleeveless 2-piece nightdress set",
+        "basic minimalist sleepwear",
+        "black champagne or navy blue homewear",
+        "polyester fabric",
+        "smooth lightweight drape",
+        "casual relaxation loungewear"
+      ],
+      "do_not_add": [
+        "Do not rewrite this as camisole + shorts + panty.",
+        "Do not force the long-sleeve robe from the local image into prompts unless the user asks for a visual variant based on the local image.",
+        "Do not invent new colors beyond black, navy blue and champagne unless new assets are supplied."
+      ],
+      "prompt_product_contract": {
+        "material": "Polyester; no fiber blend, satin composition, or lace content is confirmed by the structured page fields.",
+        "surface_and_light": "Plain polyester with a smooth, lightweight-looking drape; use restrained broad highlights and do not force mirror-like satin gloss.",
+        "transparency": "No transparency level is confirmed; keep the selected listing variant visually consistent with its product images and do not invent sheer panels.",
+        "silhouette": "Sleeveless basic minimalist two-piece nightdress/homewear set.",
+        "pieces_and_wearing_relationship": "Two coordinated pieces; preserve the exact relationship shown by the selected listing images. The local long robe is not authoritative for the linked version.",
+        "construction_locks": "Sleeveless outline, plain pattern, clean minimal lines, and consistent front/side/back length and drape.",
+        "prohibited_transformations": "No camisole-shorts-panty three-piece conversion, no forced long-sleeve robe, no lace cuffs, no invented sheer panel, and no extra accessories."
+      },
+      "notes": "User provided this as the 063 link. Link data controls product style and material even when it differs from the local product photos."
+    },
+    {
+      "sku": "045",
+      "match_status": "confirmed_or_high_similarity",
+      "local_assets": [
+        "E:\\下载\\图片素材\\045-白.png",
+        "E:\\下载\\图片素材\\045-黑.png",
+        "E:\\下载\\图片素材\\045-红.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-womens-sexy-underwire-lingerie-set-sheer-stretch/1732538334839804589",
+        "title": "CHALOVELO Women's Sexy Underwire Lingerie Set - Lady's Romantic Polyester Mix Babydoll Dress, Thong, Choker, V-Neck, Lace Trim, Sheer, Stretch, Multi-Size, Elegant Plain Exotic Wear",
+        "sold_observed": "6",
+        "rating_observed": "5.0",
+        "price_seen_usd": "22.03",
+        "shipping_seen_usd": "6.99"
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page on 2026-09-23; visual match to local 045 image confirmed.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["95% polyester and 5% elastane", "Sizes S, M, L, XL and 2XL", "Deep V-neck with lace trim", "Babydoll dress, thong and choker", "Dry clean or cold wash"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material": "95% Polyester, 5% Elastane", "neckline": "Deep V-neck", "washing_instructions": ["Dry clean", "Cold wash"], "style": ["Cute", "Elegant", "Holiday", "Romance", "Sexy", "Fashion", "Classic", "Romantic"], "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible_images_only", "content": "The section contains product images; the accessible page did not expose separate prose."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "Deep V-neck sheer stretch babydoll dress with lace trim, matching thong and choker; 95% polyester/5% elastane; colors burgundy, black and white; sizes S-2XL; dry clean or cold wash."}
+      },
+      "product_type": "3-piece underwire lace-trim babydoll dress set",
+      "confirmed_visual_details_from_local_images": [
+        "Lace and mesh bodysuit with shaped cups.",
+        "Short tulle or mesh skirt overlay.",
+        "Matching lace choker visible in product image.",
+        "Confirmed colors: white, black, red.",
+        "Decorative lace texture and soft sheer skirt are key identifiers."
+      ],
+      "materials": [
+        "95% Polyester",
+        "5% Elastane",
+        "Lace trim",
+        "Sheer tulle skirt"
+      ],
+      "page_detail_fields": {
+        "material": "95% Polyester, 5% Elastane",
+        "neckline": "Deep V-neck",
+        "washing_instructions": ["Dry clean", "Cold wash"],
+        "design_features": [
+          "lace choker",
+          "underwire floral lace cups",
+          "babydoll dress",
+          "sheer short tulle skirt",
+          "matching thong"
+        ]
+      },
+      "pieces_included": [
+        "lace choker",
+        "underwire babydoll dress with attached sheer skirt",
+        "matching thong"
+      ],
+      "colors": [
+        "Black",
+        "White",
+        "Burgundy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["S", "M", "L", "XL", "2XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": "Dry clean or cold wash",
+      "video_prompt_keywords": [
+        "lace choker",
+        "deep V-neck underwire floral lace cups",
+        "95% polyester 5% elastane stretch body",
+        "sheer tulle babydoll skirt",
+        "soft sheer skirt movement",
+        "matching thong"
+      ],
+      "do_not_add": [
+        "Do not describe it as a long robe or add stockings.",
+        "Do not omit the choker, underwire cups, short sheer skirt, or matching thong.",
+        "Do not use sizes above 2XL for this current primary listing."
+      ],
+      "prompt_product_contract": {
+        "material": "95% polyester and 5% elastane body with floral lace trim and a sheer short tulle skirt.",
+        "surface_and_light": "Floral lace cup and torso texture stays crisp; stretch body remains fitted; the tulle skirt catches soft edge light but remains visibly lightweight and translucent.",
+        "transparency": "Sheer lace/tulle zones with an opaque-enough coordinated underlayer and thong; preserve tasteful product visibility.",
+        "silhouette": "Short fitted underwire babydoll dress with structured deep V cups, close torso and softly flared sheer skirt.",
+        "pieces_and_wearing_relationship": "Three coordinated pieces: bow choker at neck, babydoll dress on body, matching thong beneath the sheer skirt. No stockings in the current primary listing.",
+        "construction_locks": "Adjustable shoulder straps, underwire floral lace cups, center-front vertical seam/boning-like visual lines, waist seam, gathered short tulle skirt, bow choker; preserve the same rear straps and skirt length across shots.",
+        "prohibited_transformations": "No long robe, stockings, garter belt, opaque skirt, missing choker, soft unstructured cups, halter conversion, long skirt, or piece-count changes."
+      },
+      "previous_reference": {
+        "url": "https://shop.tiktok.com/us/pdp/lace-choker-babydoll-lingerie-set-cute-ruffled-skirt-tulle-bodysuit-matching-teddy-stockings/1732307950070043309",
+        "status": "Historical similar-product reference only; no longer the authoritative 045 link.",
+        "reason": "It lists matching stockings and S-5XL, while the newly opened underwire dress/thong/choker page matches the local 045 product image and offers S-2XL."
+      },
+      "notes": "The user-opened product ID 1732538334839804589 is the closest visual and structural match to local SKU 045 and is now the primary listing."
+    },
+    {
+      "sku": "015",
+      "match_status": "confirmed_or_high_similarity",
+      "local_assets": [
+        "E:\\下载\\图片素材\\015-白底图.jpg",
+        "E:\\下载\\图片素材\\015白.png",
+        "E:\\下载\\图片素材\\015白色.png",
+        "E:\\下载\\图片素材\\015粉.png",
+        "E:\\下载\\图片素材\\015红.png",
+        "E:\\下载\\图片素材\\015酒红色.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/lace-four-piece-lingerie-set-seductive-nightwear-robe-teddy-mesh-stockings/1732308319763468973",
+        "title": "CHALOVELO Lace 4-Piece Lingerie Set - Sexy Lace Corset and Panty Exotic Babydoll Sleepwear Robe with Garter Belt & Stockings, Lady, Elegance, Women, Style",
+        "sold_observed": "434",
+        "rating_observed": "4.8",
+        "review_count_observed": "28",
+        "price_seen_usd": "31.20",
+        "store_card_price_seen_usd": "28.99",
+        "shipping_seen_usd": "6.99"
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page on 2026-09-23.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["Intricate lace robe and teddy", "Sheer mesh stockings", "Tank top and thong", "Sizes S, M, L, XL and 2XL", "Red, Black, BurgundyR and White"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material": "Lace", "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible", "ai_generated": false, "summary": "Four-piece lingerie set described with an intricate lace robe and teddy, sheer mesh stockings, and a sleek tank top/thong relationship. The seller copy uses overlapping component names, so the exact four-piece count must follow the selected listing images."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "Coordinated lace-and-sheer-mesh layered set centered on a robe and lace teddy; the AI introduction repeats tank top, thong and mesh stockings while acknowledging the listing calls it four pieces."},
+        "variant_selector": {"colors": ["Black", "White", "Red", "BurgundyR", "Pink", "Brown", "PurPle"], "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"]}
+      },
+      "product_type": "lace robe and teddy lingerie set with stockings",
+      "confirmed_visual_details_from_local_images": [
+        "Long transparent lace robe with open front.",
+        "Long sleeves and draping lace edges.",
+        "Inner lace/teddy or corset-like structure with cup and vertical waist seams.",
+        "Garter/stocking visual structure.",
+        "Confirmed local colors: white, pink, red, burgundy."
+      ],
+      "materials": [
+        "Intricate lace",
+        "Sheer mesh",
+        "Sheer mesh stockings"
+      ],
+      "page_detail_fields": {
+        "material": "Lace",
+        "design_features": [
+          "intricate lace robe and teddy",
+          "sheer mesh stockings",
+          "sleek tank top and thong",
+          "form-fitting complement"
+        ],
+        "ca_prop_65_reproductive_chemicals": "No",
+        "ca_prop_65_carcinogens": "No"
+      },
+      "pieces_included": [
+        "lace robe",
+        "lace teddy / inner bodysuit",
+        "tank top noted on TikTok page",
+        "thong noted on TikTok page",
+        "mesh stockings noted on TikTok page"
+      ],
+      "colors": [
+        "Red",
+        "Black",
+        "BurgundyR",
+        "White",
+        "Pink",
+        "Brown",
+        "PurPle"
+      ],
+      "local_colors_confirmed": [
+        "White",
+        "Pink",
+        "Red",
+        "Burgundy"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": null,
+      "video_prompt_keywords": [
+        "transparent lace long robe",
+        "open-front lace robe",
+        "lace teddy inside",
+        "garter and stocking structure",
+        "delicate lace sleeves",
+        "layered sheer look"
+      ],
+      "do_not_add": [
+        "Do not simplify it into a single babydoll mini dress.",
+        "Do not ignore the robe layer.",
+        "Use TikTok page color data as the primary variant list; local images can confirm or illustrate only the colors currently available as assets."
+      ],
+      "prompt_product_contract": {
+        "material": "Structured detail field: lace. Listing copy also identifies sheer mesh stockings; exact fiber percentages are not provided.",
+        "surface_and_light": "Fine lace pattern on the long robe and inner teddy remains readable; mesh stockings transmit light softly; avoid satin gloss or heavy opaque fabric.",
+        "transparency": "Long robe and stockings are sheer/semi-transparent, while the layered inner teddy/corset and panty areas maintain tasteful coverage.",
+        "silhouette": "Layered four-piece lingerie look with a long open-front lace robe over a fitted inner teddy/corset and coordinated lower pieces/stockings.",
+        "pieces_and_wearing_relationship": "The listing calls it four pieces but uses overlapping names (robe, teddy, tank top, thong, stockings). Follow the selected listing images for exact count and attachment; never render five unrelated floating garments.",
+        "construction_locks": "Long-sleeve open-front lace robe, fitted cup-and-torso inner structure, coordinated thong/panty relationship, garter/stocking relationship only as shown, and consistent long robe hem across shots.",
+        "prohibited_transformations": "No single mini-dress simplification, no omitted robe, no opaque robe, no satin substitution, no detached or multiplied stockings/garters, and no invented fifth piece."
+      },
+      "secondary_reference": {
+        "url": "https://shop.tiktok.com/us/pdp/plus-size-soft-mesh-teddy-nightgown-set-womens-sleepwear/1732305238796440237",
+        "status": "plus-size and soft mesh reference only",
+        "sold_observed": "182",
+        "sizes": [
+          "M",
+          "L",
+          "XL",
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL"
+        ],
+        "colors": [
+          "red",
+          "white",
+          "pink",
+          "black",
+          "dark green",
+          "navy blue",
+          "black+dark green"
+        ],
+        "materials": [
+          "soft breathable mesh"
+        ]
+      }
+    },
+    {
+      "sku": "056",
+      "match_status": "confirmed_by_user",
+      "local_assets": [
+        "E:\\下载\\图片素材\\056正面无裤头白底图.png",
+        "E:\\下载\\图片素材\\056背面.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-satin-pajama-set-for-women-3-piece-sleepwear/1732460699708986029",
+        "title": "CHALOVELO Women's Soft Satin 3 Piece Set Lingerie - Basic Camisole Top, Shorts for Lounging, Ruffle Charm Sleepwear with Supportive Design for Daily Use lingerie lingerie set lingerie for women lingerie set arriving fast,sohochic",
+        "sold_observed": "73",
+        "rating_observed": "5.0",
+        "price_seen_usd": "47.00",
+        "store_card_price_seen_usd": "22.99",
+        "shipping_seen_usd": null
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page and its visible Red/Green variant images on 2026-09-23.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["Soft satin with smooth texture", "Camisole top, shorts and bikini-style panties", "Sizes S, M, L, XL and 2XL", "Slim-fitting cut", "Base colors black, pink and burgundy"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material_raw": "Stain", "material_interpretation": "Satin, supported by listing title, highlights, introduction and images", "style": ["Basic", "Casual", "Elegant", "Holiday", "Sexy"], "fit": "Slim-fitting", "dangerous_goods_or_hazardous_materials": "No", "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible_images_only", "content": "The section contains product images; no independent prose was exposed in the accessible page text."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "Three-piece soft satin sleepwear set: camisole top, matching shorts and bikini-style panties, slim-fitting, sizes S-2XL. The AI copy mentions black, pink and burgundy and holiday themes."},
+        "variant_selector": {"colors": ["Red", "Green", "Burgundy", "Pink", "Black"], "sizes": ["S", "M", "L", "XL", "2XL"]}
+      },
+      "product_type": "soft satin camisole and shorts lingerie / pajama set",
+      "confirmed_visual_details_from_local_images": [
+        "Black satin-like short camisole top.",
+        "Spaghetti straps.",
+        "Triangle/deep V bust area.",
+        "Ruffle hem on top.",
+        "Matching black ruffle short or panty bottom.",
+        "Smooth and slightly glossy fabric surface."
+      ],
+      "materials": [
+        "Soft satin",
+        "Satin-like smooth fabric"
+      ],
+      "page_detail_fields": {
+        "material": "Stain shown on page, interpreted as satin from title and description",
+        "design_features": [
+          "soft satin material",
+          "smooth texture",
+          "lightweight",
+          "camisole top",
+          "shorts",
+          "bikini-style panties",
+          "ruffle charm"
+        ]
+      },
+      "pieces_included": [
+        "camisole top",
+        "shorts",
+        "bikini-style panties"
+      ],
+      "colors": [
+        "Red Christmas print",
+        "Green Christmas print",
+        "Black",
+        "Pink",
+        "Burgundy"
+      ],
+      "variant_details": {
+        "Red": "New Christmas variant: red satin ground with repeating white holiday motifs including Christmas trees, gift boxes and snowflake-like shapes; same ruffle camisole-and-shorts silhouette.",
+        "Green": "New Christmas variant: deep green satin ground with repeating white holiday motifs including Christmas trees, gift boxes and snowflake-like shapes; same ruffle camisole-and-shorts silhouette.",
+        "Burgundy": "Solid burgundy satin variant.",
+        "Pink": "Solid pale pink satin variant.",
+        "Black": "Solid black satin variant."
+      },
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["S", "M", "L", "XL", "2XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": null,
+      "video_prompt_keywords": [
+        "black soft satin camisole",
+        "ruffle hem",
+        "matching ruffle shorts",
+        "smooth satin sheen",
+        "lightweight lounge lingerie",
+        "soft fabric movement"
+      ],
+      "do_not_add": [
+        "Do not describe it as a long robe.",
+        "Do not add stockings, choker or lace robe.",
+        "Do not confuse it with 063."
+      ],
+      "prompt_product_contract": {
+        "material": "Soft satin according to title, highlights, introduction and product images; the structured field typo 'Stain' is not a separate fabric.",
+        "surface_and_light": "Smooth lightweight satin with broad soft highlights and fluid folds; preserve printed motifs sharply on Christmas variants without turning the fabric into plastic or sequins.",
+        "transparency": "Not listed as sheer; keep satin panels opaque with normal edge translucency only.",
+        "silhouette": "Slim-fitting three-piece lounge/lingerie set with a short V-neck camisole, matching ruffle shorts and bikini-style panties.",
+        "pieces_and_wearing_relationship": "Camisole top and shorts are the visible outer pairing; bikini-style panties are the third coordinated piece and must not replace the shorts unless deliberately shown as a separate component.",
+        "construction_locks": "Spaghetti straps, triangular/deep-V bust, gathered seam and ruffle peplum hem on top, elastic/gathered waist and ruffled short legs; preserve the same cut across solid and Christmas-print variants.",
+        "christmas_variant_lock": "For Red or Green, use the matching red or deep-green satin base with the listing-visible repeating white Christmas tree, gift and snowflake-like motifs on both camisole and shorts. Do not generate a solid-color Red/Green version.",
+        "prohibited_transformations": "No robe, lace bodysuit, stockings, choker, opaque cotton knit, velvet, sequins, plaid, random Christmas graphics, missing shorts, or two-piece reduction."
+      },
+      "notes": "User provided this link and confirmed it belongs with the satin ruffle short set."
+    },
+    {
+      "sku": "032",
+      "match_status": "confirmed_by_user_link_priority",
+      "local_assets": [
+        "E:\\下载\\图片素材\\032-白.png",
+        "E:\\下载\\图片素材\\032-黑.png",
+        "E:\\下载\\图片素材\\032-红.png"
+      ],
+      "tiktok_product": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-womens-lace-lingerie-set-floral-bra-and-comfortable-sleepwear/1732537217568903853",
+        "title": "CHALOVELO Women's 3-Piece Lace Lingerie Set - Basic, Sexy Chic Babydoll Cut Camisole Bra, Panty, Seamless Fit Shorts, V-Neck Sleepwear Underwear (Blush Pink)",
+        "sold_observed": "6",
+        "price_seen_usd": null,
+        "shipping_seen_usd": "6.99"
+      },
+      "listing_sections": {
+        "source_status": "Fully read from the live TikTok Shop page on 2026-09-23.",
+        "highlights": {"status": "page_visible", "ai_generated": true, "items": ["95% Polyester, 5% Elastane", "Camisole, bra and panty", "Sizes S, M, L, XL and 2XL", "Red, Pink, White and Black", "Machine washable"]},
+        "detail_fields": {"status": "page_visible_structured", "fields": {"material_composition": "95% Polyester, 5% Elastane", "additional_material": "Lace", "washing_instructions": "Machine washable", "ca_prop_65_reproductive_chemicals": "No", "ca_prop_65_carcinogens": "No"}},
+        "product_description": {"status": "page_visible_images_only", "content": "The section contains product images; no independent prose was exposed in the accessible page text."},
+        "introduction": {"status": "page_visible", "ai_generated": true, "summary": "Three-piece floral lace set with camisole, matching bra and panty, made from 95% polyester/5% elastane with gentle stretch; sizes S-2XL; red, pink, white and black; machine washable."}
+      },
+      "product_type": "3-piece floral lace lingerie set",
+      "confirmed_visual_details_from_local_images": [
+        "Two-piece lace lingerie set.",
+        "Short lace bralette / soft bra top.",
+        "Spaghetti straps and soft triangle or cup-like lace front.",
+        "Wide lace underbust band.",
+        "Matching lace shorts with scalloped edges.",
+        "Confirmed local colors: white, black, red."
+      ],
+      "materials": [
+        "95% Polyester",
+        "5% Elastane",
+        "Lace"
+      ],
+      "page_detail_fields": {
+        "material": "95% Polyester, 5% Elastane",
+        "additional_material_field": "Lace",
+        "design_features": [
+          "floral lace ensemble",
+          "camisole",
+          "bra",
+          "panty",
+          "seamless fit shorts",
+          "V-neck sleepwear underwear"
+        ]
+      },
+      "pieces_included": [
+        "camisole",
+        "bra",
+        "panty",
+        "title also mentions seamless fit shorts"
+      ],
+      "colors": [
+        "Red",
+        "Pink",
+        "White",
+        "Black"
+      ],
+      "local_colors_confirmed": [
+        "White",
+        "Black",
+        "Red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "sizing_guidance": {
+        "listing_confirmed_sizes": ["S", "M", "L", "XL", "2XL"],
+        "official_height_weight_mapping": null,
+        "official_mapping_status": "No official height/weight mapping visible in accessible listing details as of 2026-09-23.",
+        "default_ai_casting": {"height_in": 66, "weight_lb": 187, "selected_listing_size": "2XL", "status": "Internal AI casting reference; not official customer sizing advice."},
+        "fit_lock": "Natural fit; no skin cutting, unsupported stretch, floating fabric, or change of garment cut."
+      },
+      "care": "Machine washable",
+      "video_prompt_keywords": [
+        "3-piece floral lace lingerie set",
+        "camisole bra and panty",
+        "V-neck sleepwear underwear",
+        "floral lace texture",
+        "soft stretch fabric",
+        "95% polyester 5% elastane",
+        "machine washable lace set"
+      ],
+      "do_not_add": [
+        "Do not add halter neck, heart chains or garter belt.",
+        "Use the user-provided TikTok link as the product structure source.",
+        "Do not reduce this SKU to only the two local-image pieces unless the user explicitly asks for a local-image visual variant."
+      ],
+      "prompt_product_contract": {
+        "material": "95% polyester and 5% elastane with floral lace construction.",
+        "surface_and_light": "Fine floral lace stays crisp and slightly matte with soft edge highlights; elastane provides gentle stretch without glossy rubber or excessive compression.",
+        "transparency": "Lace openings may be semi-sheer as shown by the selected listing images; preserve tasteful coordinated coverage and do not invent opaque fabric panels.",
+        "silhouette": "Three-piece V-neck floral lace lingerie set with coordinated upper and lower pieces.",
+        "pieces_and_wearing_relationship": "Camisole, bra and panty according to the page highlights/introduction. Use listing images to preserve whether the camisole and bra are separate/layered and never collapse the set to the two local-image pieces.",
+        "construction_locks": "V-neck, spaghetti-strap floral lace upper structure, matching lace lower piece(s), consistent scalloped lace edges and coordinated color across all three pieces.",
+        "prohibited_transformations": "No halter neck, heart chains, garter belt, choker, robe, satin substitution, missing third piece, opaque sports-bra conversion, or color mixing."
+      },
+      "old_market_reference": {
+        "url": "https://shop.tiktok.com/us/pdp/chalovelo-womens-3-piece-lingerie-set-halter-bra-panties/1732464692405179053",
+        "status": "market reference only; not same product",
+        "reason": "Contains halter bra, heart chains and garter belt, which are not visible in local 032 images."
+      }
+    }
+  ]
+}

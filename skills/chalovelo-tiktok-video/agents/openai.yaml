@@ -1,0 +1,4 @@
+interface:
+  display_name: "CHALOVELO TikTok 视频与图文智能体"
+  short_description: "根据商品事实生成 TikTok 视频、挂车图文与提示词"
+  default_prompt: "使用 $chalovelo-tiktok-video 为指定 SKU 生成符合商品事实的 TikTok 视频或挂车图文提示词。"

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gem navigation harness</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 720px; font-family: sans-serif; }
+      button, input, textarea { min-width: 80px; min-height: 36px; }
+      #settingsButton { position: fixed; left: 320px; bottom: 20px; width: 44px; min-width: 44px; }
+      #settingsMenu { position: fixed; left: 330px; bottom: 72px; padding: 16px; background: white; border: 1px solid #999; }
+      #manager { padding: 80px; }
+      #editor { position: fixed; inset: 0; z-index: 10; padding: 80px 240px; background: white; }
+      #editorBack { position: absolute; left: 240px; top: 32px; width: 48px; min-width: 48px; }
+      #successDialog { position: fixed; z-index: 20; left: 420px; top: 180px; width: 360px; height: 180px; padding: 30px; background: white; border: 2px solid #333; }
+      #successClose { position: absolute; right: 10px; top: 10px; width: 40px; min-width: 40px; }
+      [hidden] { display: none !important; }
+    </style>
+    <script>
+      const taskStore = { gemBatchTask: { id: "fixture-task", status: "running", log: [] } };
+      globalThis.chrome = {
+        runtime: {
+          onMessage: { addListener() {} },
+          async sendMessage() { return { ok: true }; }
+        },
+        storage: {
+          local: {
+            async get(key) { return typeof key === "string" ? { [key]: taskStore[key] } : { ...taskStore }; },
+            async set(values) { Object.assign(taskStore, values); },
+            async remove(key) { delete taskStore[key]; }
+          }
+        }
+      };
+      globalThis.fixtureEvents = [];
+    </script>
+    <script src="../../shared.js"></script>
+    <script>
+      GemImporterShared.isGemManagerPath = () => document.body?.dataset.route === "manager";
+    </script>
+  </head>
+  <body data-route="home">
+    <aside>
+      <button id="settingsButton" aria-label="设置和帮助">设置</button>
+      <div id="settingsMenu" role="menu" hidden>
+        <button id="settingsGems" role="menuitem">Gems</button>
+      </div>
+    </aside>
+
+    <main id="manager" hidden>
+      <h1>Gem 管理器</h1>
+      <button id="createGem">新建 Gem</button>
+    </main>
+
+    <section id="editor" hidden>
+      <button id="editorBack" aria-label="Back to Gem manager">arrow_back</button>
+      <label for="gemName">名称</label>
+      <input id="gemName" aria-label="Gem name" value="测试 Gem" />
+      <label for="instructions">Instructions</label>
+      <textarea id="instructions" aria-label="Instructions">fixture</textarea>
+      <button id="saveGem" aria-label="Save Gem">保存</button>
+    </section>
+
+    <div id="successDialog" role="dialog" hidden>
+      <strong>已创建 Gem：测试 Gem</strong>
+      <button id="successClose" aria-label="关闭">×</button>
+    </div>
+
+    <script src="../../content.js"></script>
+    <script>
+      settingsButton.addEventListener("click", () => {
+        settingsMenu.hidden = false;
+        fixtureEvents.push("settings");
+      });
+      settingsGems.addEventListener("click", () => {
+        settingsMenu.hidden = true;
+        manager.hidden = false;
+        document.body.dataset.route = "manager";
+        fixtureEvents.push("gems");
+      });
+      successClose.addEventListener("click", () => {
+        successDialog.hidden = true;
+        fixtureEvents.push("close");
+      });
+      editorBack.addEventListener("click", () => {
+        editor.hidden = true;
+        fixtureEvents.push("back");
+      });
+      globalThis.prepareSavedEditor = () => {
+        manager.hidden = false;
+        editor.hidden = false;
+        successDialog.hidden = false;
+        document.body.dataset.route = "manager";
+      };
+      globalThis.runFixtureFlow = async () => {
+        const opened = await openManagerFromSettings();
+        prepareSavedEditor();
+        const readyWhileEditorOpen = isManagerReady();
+        await finishSavedGem("测试 Gem");
+        await returnToGemManager("测试 Gem");
+        return {
+          opened,
+          readyWhileEditorOpen,
+          readyAfterReturn: isManagerReady(),
+          events: [...fixtureEvents]
+        };
+      };
+    </script>
+  </body>
+</html>

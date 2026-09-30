@@ -1,0 +1,31 @@
+#gem-batch-importer-toast {
+  color-scheme: light dark;
+  position: fixed;
+  z-index: 2147483647;
+  right: 20px;
+  bottom: 20px;
+  width: min(360px, calc(100vw - 40px));
+  padding: 13px 15px;
+  border: 1px solid #c7ccd3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #202124;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 35%);
+  font: 13px/1.45 "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: 0;
+}
+
+#gem-batch-importer-toast strong,
+#gem-batch-importer-toast span { display: block; }
+#gem-batch-importer-toast span { margin-top: 3px; color: #5f6368; }
+#gem-batch-importer-toast[data-tone="error"] { border-color: #8c4b47; }
+#gem-batch-importer-toast[data-tone="done"] { border-color: #3b725f; }
+
+@media (prefers-color-scheme: dark) {
+  #gem-batch-importer-toast {
+    border-color: #3e4652;
+    background: #202124;
+    color: #f1f3f4;
+  }
+  #gem-batch-importer-toast span { color: #bdc1c6; }
+}
