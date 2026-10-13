@@ -232,3 +232,13 @@ Use and adapt this baseline:
 - All depicted people must be unambiguously adults. Never create or imply minors, school-age styling, or age-ambiguous casting.
 - Keep posing, framing, dialogue, and product presentation suitable for TikTok advertising and product demonstration. Avoid explicit sexual acts, fetish framing, or exploitative presentation.
 - Do not claim TikTok policy compliance as a certainty. Flag content that may require a more conservative wardrobe, pose, crop, or edit for advertising review.
+
+## Grok video generation integration
+
+- Added on 2026-10-10 from `E:\grok`. Original package: `grok-editor-video-windows.zip`; unpacked package: `grok-editor-video-windows/grok-editor-video/`; project skill source: `skills/grok-editor-video/`; installed user skill: `C:\Users\user\.codex\skills\grok-editor-video\`.
+- For product prompt writing and review, continue following `$chalovelo-tiktok-video` and the product rules above. When the user asks to actually generate and download a Grok video, also invoke `$grok-editor-video` and read its SKILL.md.
+- Read `grok-editor-video-使用说明.md` for installation state, command examples, local shared configuration, and the encrypted-token newline fix.
+- Use only the selected images authorized for the requested shot. Show mode, image count, duration, and estimated charge before submission. This integration alone does not authorize submitting a paid generation job.
+- The bundled relay script supports 1–7 JPG/PNG/WebP reference images and 1–15 seconds, with fixed model `grok-imagine-video-1.5-preview`, 720p, and 9:16. Do not silently truncate a longer approved timeline.
+- Submit once, record the job ID, poll the same job, and download the MP4. Resume a pending job with `-ResumeJobId`; do not automatically resubmit a failed or uncertain job.
+- The existing token and configuration are shared under `%APPDATA%\GrokEditor` for this Windows user. Keep credentials out of project files, Git, logs, and conversation output.

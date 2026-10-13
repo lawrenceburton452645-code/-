@@ -140,6 +140,8 @@ A wrong style, color, material, piece count, structure, or visibly deformed garm
 
 ## Output
 
+For every video prompt, read [creative-diversity-and-post-copy.md](references/creative-diversity-and-post-copy.md). Deliver the complete video generation prompt, a separate publishing POV, and separate post copy. Never embed publishing POV or post copy into generation instructions or generated screen text. Compare meaningful creative structure against recent available outputs and maintain the project creative history after delivery; changing adjectives alone is not a new concept. This user-requested diversity rule governs the use of recurring Format A/B/C examples.
+
 Write final generation prompts in Chinese unless the user requests another language. Keep spoken dialogue, voice-over, and requested US-market photo-post copy in natural American English. State the selected reference-led format when using video Format A, B, or C, or state the selected photo content type and image count for a carousel.
 
 Match output depth to the request. Do not surface internal template-selection notes, hidden scoring, or exhaustive source summaries unless asked. For prompt revisions, provide the complete replacement prompt.
